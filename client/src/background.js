@@ -1,3 +1,19 @@
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+  // Check if the tab is fully loaded
+  if (changeInfo.status === "complete" && tab.url) {
+    // Check if the URL matches ClickUp
+    if (tab.url.includes("clickup.com")) {
+      // Enable the extension action (button in the toolbar)
+      chrome.action.enable(tabId);
+      chrome.action.setIcon({ tabId: tabId, path: "icons/icon32.jpg" });
+    } else {
+      // Disable the extension action
+      chrome.action.disable(tabId);
+      chrome.action.setIcon({ tabId: tabId, path: "icons/icon32disabled.jpg" });
+    }
+  }
+});
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === "FETCH_SUMMARY") {
     console.log("Received message:", message);
@@ -52,16 +68,19 @@ function notifyContentScript(message) {
 
 const fetchSummaryFromBackend = () => {
   return {
-    ticket_title: "Missing receipt expenses are incomplete expenses",
+    ticket_title: "Receipt Images Disappearing After Capture in Mobile App",
     ticket_description:
-      "When user takes a photo of his receipt, the image stays for only a few seconds and then disappears. He did install the latest version of mobile app, but the problem with the receipts disappearing continued after the update. Steps to repro: 1.2.3.4.",
+      "The user reports that when taking a photo of a receipt in the mobile app, the image stays for a few seconds before disappearing. The issue persists even after installing the latest version of the app. The user has followed all necessary steps to reproduce the issue (detailed in the original ticket). This problem is impacting multiple users and is preventing them from completing their expense reporting process.",
     org_id: "orgyX1EFZXrN",
     org_name: "E3 Environmental",
     freshdesk_url: "https://fyle.freshdesk.com/a/tickets/54427",
     email_ids_of_affected_users: ["abc@fyle.in", "cccc@fyle.in"],
     is_integration: true,
-    is_card: false,
-    impact: "users cannot report expenses",
+    is_card: true,
+    impact:
+      "Users cannot report expenses, impacting their ability to complete financial processes.",
     priority: "p0",
+    ADDITIONAL_SUMMARY:
+      "Other similar tickets may indicate that this issue has occurred in other organizations and across various platforms, suggesting a broader issue with expense reporting or receipt image processing. Further investigation of these tickets could reveal shared causes or solutions.",
   };
 };

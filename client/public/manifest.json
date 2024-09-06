@@ -11,6 +11,9 @@
     "activeTab",
     "tabs"
   ],
+  "icons": {
+    "32": "/icons/icon32.jpg"
+  },
   "host_permissions": [
     "https://*.clickup.com/*",
     "http://*.clickup.com/*"

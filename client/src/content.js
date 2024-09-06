@@ -28,7 +28,7 @@ function showLoadingIndicator() {
   loadingDiv.style.justifyContent = "center";
   loadingDiv.style.fontSize = "20px";
   loadingDiv.style.zIndex = "9999";
-  loadingDiv.innerText = "Loading...";
+  loadingDiv.innerText = "Auto-filling form...";
   document.body.appendChild(loadingDiv);
 }
 
