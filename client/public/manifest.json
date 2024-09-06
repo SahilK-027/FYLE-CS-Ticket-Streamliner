@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "My Chrome Extension",
+  "version": "1.0.0",
+  "description": "Autofill ClickUp form with Freshdesk data",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://*.clickup.com/*",
+    "http://*.clickup.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.clickup.com/*",
+        "http://*.clickup.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
