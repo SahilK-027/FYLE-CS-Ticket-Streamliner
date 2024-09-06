@@ -25,21 +25,22 @@ npm run dev
 
 # To build extension
 npm run build
-
-# To run your extension in Chrome after building it
-Open Chrome Browser: Launch the Chrome browser on your computer.
-
-Access Chrome Extensions Page: Navigate to the Chrome Extensions page by typing chrome://extensions/ into the address bar and pressing Enter.
-
-Enable Developer Mode: Toggle the Developer Mode switch in the top-right corner of the Extensions page to turn it on.
-
-Load Unpacked Extension: Click the "Load unpacked" button that appears after enabling Developer Mode.
-
-Select the Extension Directory: In the file dialog that opens, navigate to the directory where your built extension files are located (for example, dist or build). Select this directory and click "Select Folder" (or "Open" on some systems).
-
-Verify the Extension: Your extension should now appear on the Extensions page. Verify that it is listed and check if there are any errors or warnings that need to be addressed.
-
-Test Your Extension: Click on the extension icon (if it has one) or interact with it as needed to ensure it is functioning as expected.
-
-Update the Extension: If you make changes and rebuild the extension, you can click the "Reload" button on the Extensions page to load the latest version.
 ```
+
+#### To run your extension in Chrome after building it
+
+- Open Chrome Browser: Launch the Chrome browser on your computer.
+
+- Access Chrome Extensions Page: Navigate to the Chrome Extensions page by typing chrome://extensions/ into the address bar and pressing Enter.
+
+- Enable Developer Mode: Toggle the Developer Mode switch in the top-right corner of the Extensions page to turn it on.
+
+- Load Unpacked Extension: Click the "Load unpacked" button that appears after enabling Developer Mode.
+
+- Select the Extension Directory: In the file dialog that opens, navigate to the directory where your built extension files are located (for example, dist or build). Select this directory and click "Select Folder" (or "Open" on some systems).
+
+- Verify the Extension: Your extension should now appear on the Extensions page. Verify that it is listed and check if there are any errors or warnings that need to be addressed.
+
+- Test Your Extension: Click on the extension icon (if it has one) or interact with it as needed to ensure it is functioning as expected.
+
+- Update the Extension: If you make changes and rebuild the extension, you can click the "Reload" button on the Extensions page to load the latest version.
